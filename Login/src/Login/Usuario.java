@@ -69,6 +69,15 @@ public class Usuario {
             if (banco.resultset.next()) {
                 //Caso tenha
                 resultUsuario = true;
+                
+                //Setters em Nome e Usuario
+                setNome(banco.resultset.getString("nome"));
+                setUsuario(banco.resultset.getString("usuario"));
+
+                //Nos atributos estáticos, realizo as atribuições
+                nomeUsuario = getNome();
+                usuarioSistema = getUsuario();
+
             } else {
                 //Caso não tenha
                 resultUsuario = false;
@@ -106,14 +115,7 @@ public class Usuario {
                 //Caso tenha
                 resultUsuario = true;
 
-                //Setters em Nome e Usuario
-                setNome(banco.resultset.getString("nome"));
-                setUsuario(banco.resultset.getString("usuario"));
-
-                //Nos atributos estáticos, realizo as atribuições
-                nomeUsuario = getNome();
-                usuarioSistema = getUsuario();
-
+                
             } else {
                 //Caso não tenha
                 resultUsuario = false;
